@@ -1,0 +1,17 @@
+.border-radius(@radius:4px) {
+  border-radius: @radius;
+}
+
+.startAndEnd(@color: white,@bg: skyblue) {
+  .border-radius();
+  text-align: center;
+  line-height: 40px;
+  width: 100px;
+  height: 40px;
+  color: @color;
+  background-color: @bg;
+}
+
+.box-shadow(@color: rgba(0, 0, 0, 0.08)) {
+  box-shadow: 0 0 8px @color;
+}

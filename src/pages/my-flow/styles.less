@@ -1,0 +1,135 @@
+@import './util.less';
+
+@lineColor: #dedede;
+@lineWidth: 2px;
+
+.myFlow {
+  width: 100vw;
+  height: 100vh;
+  background-image: url('./svg/bgc.svg');
+  background-size: 11px;
+  overflow: auto;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  padding: 55px 200px;
+}
+
+.start {
+  .startAndEnd();
+}
+
+.end {
+  .startAndEnd(@bg: #666666);
+}
+
+.node {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.line {
+  width: @lineWidth;
+  height: 16px;
+  background-color: @lineColor;
+}
+
+.add {
+  .box-shadow();
+  position: relative;
+  text-align: center;
+  line-height: 28px;
+  width: 28px;
+  height: 28px;
+  border-radius: 100%;
+  background-color: #fff;
+}
+
+.ordinary {
+  .box-shadow();
+  .border-radius(8px);
+  position: relative;
+  width: 200px;
+  background-color: #fff;
+  padding: 16px;
+  .title {
+    font-size: 14px;
+  }
+  .ordinaryContent {
+    margin-top: 6px;
+    padding: 4px 0;
+  }
+}
+
+@ConditionBtnHeight: 36px;
+.condition {
+  position: relative;
+  margin-top: @ConditionBtnHeight / 2;
+  display: flex;
+  .conditionBtn {
+    z-index: 99;
+    position: absolute;
+    top: -(@ConditionBtnHeight / 2);
+    background-color: #fff;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid @lineColor;
+    padding: 0 10px;
+    height: @ConditionBtnHeight;
+    border-radius: @ConditionBtnHeight / 2;
+  }
+  .conditionItems {
+    position: relative;
+    padding: 40px 40px 0 40px;
+    min-width: 280px;
+    // border-bottom: 2px solid #dedede;
+    // border-top: 2px solid #dedede;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .lineTop {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 2px;
+      background-color: @lineColor;
+    }
+    .lineBottom {
+      position: absolute;
+      bottom: 0;
+      width: 100%;
+      height: 2px;
+      background-color: @lineColor;
+    }
+
+    .lineHalfLeft {
+      width: 50%;
+      left: 50%;
+    }
+    .lineHalfRight {
+      width: 50%;
+      right: 50%;
+    }
+
+    &::before {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      content: '';
+      margin: auto;
+      width: 2px;
+      height: 100%;
+      background-color: #dedede;
+    }
+  }
+}
